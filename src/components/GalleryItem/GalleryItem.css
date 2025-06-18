@@ -47,7 +47,7 @@
   cursor: pointer;
 }
 .gallery-item .save-button:hover {
-  background-color: rgb(187, 1, 1);
+  background-color: rgb(186, 1, 1);
 }
 .gallery-functions button {
   width: 30px;
