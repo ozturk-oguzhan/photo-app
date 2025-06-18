@@ -1,0 +1,64 @@
+.gallery-item {
+  display: flex;
+  position: relative;
+}
+.gallery-item img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.save-button,
+.gallery-functions,
+.overlay {
+  display: none;
+  position: absolute;
+}
+
+.gallery-item:hover .overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.425);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 16px;
+}
+.gallery-item:hover .gallery-functions {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  bottom: 16px;
+  right: 16px;
+  gap: 4px;
+}
+.gallery-item:hover .save-button {
+  display: block;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border-radius: 16px;
+  width: max-content;
+  padding: 8px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.gallery-item .save-button:hover {
+  background-color: rgb(187, 1, 1);
+}
+.gallery-functions button {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.gallery-functions button img {
+  width: 20px;
+  height: 20px;
+}
+.gallery-functions button:hover {
+  background-color: rgb(197, 197, 197);
+}
