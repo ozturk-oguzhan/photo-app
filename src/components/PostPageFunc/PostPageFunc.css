@@ -1,0 +1,42 @@
+.post-page-func {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.func {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.func button {
+  border-radius: 100%;
+  border: none;
+  padding: 5px;
+}
+.func button:hover {
+  background-color: rgb(207, 207, 207);
+}
+.func-btn {
+  width: 16px;
+  height: 16px;
+}
+.post-page-func img {
+  width: 24px;
+  height: 24px;
+  border: 100%;
+  border: 100%;
+  object-fit: cover;
+}
+.post-page-func .save-btn {
+  padding: 0 10px;
+  border: none;
+  background-color: rgb(255, 15, 15);
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+}
+.post-page-func .save-btn:hover {
+  background-color: rgb(236, 15, 15);
+}

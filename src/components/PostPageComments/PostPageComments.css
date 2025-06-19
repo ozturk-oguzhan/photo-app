@@ -1,0 +1,20 @@
+.post-comments {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  flex-direction: column;
+}
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.comment {
+  display: flex;
+  gap: 10px;
+}
+.comment img {
+  width: 36px;
+  object-fit: cover;
+  height: 36px;
+}
