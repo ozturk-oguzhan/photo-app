@@ -9,12 +9,13 @@
 }
 .post-container {
   display: flex;
-  width: 65%;
+  width: 85%;
   max-height: 750px;
   border-radius: 32px;
   overflow: hidden;
   border: 1px solid rgb(233, 233, 233);
 }
+
 .post-image {
   flex: 1;
 }
@@ -29,6 +30,8 @@
   flex-direction: column;
   padding: 16px;
   gap: 16px;
+  overflow: auto;
+  height: 650px;
 }
 .post-detail a {
   text-decoration: none;
@@ -44,15 +47,15 @@
   gap: 8px;
   align-items: center;
 }
-
 @media (max-width: 1127px) {
   .post-container {
     width: 100%;
+    margin: 20px;
   }
 }
-
 @media (max-width: 751px) {
   .post-container {
     flex-direction: column;
+    width: 50%;
   }
 }

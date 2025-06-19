@@ -1,6 +1,8 @@
 import React from "react";
 import "./PostPage.css";
 import { Link } from "react-router";
+import PostPageFunc from "../../components/PostPageFunc/PostPageFunc";
+import PostPageComments from "../../components/PostPageComments/PostPageComments";
 const PostPage = () => {
   return (
     <div className="post-page">
@@ -10,11 +12,12 @@ const PostPage = () => {
           <img src="/pins/pin1.jpeg" alt="" />
         </div>
         <div className="post-detail">
+          <PostPageFunc />
           <Link to="/john" className="user-detail">
             <img src="/general/noAvatar.png" alt="" />
             <span>John Doe</span>
           </Link>
-          <span>Comments</span>
+          <PostPageComments />
         </div>
       </div>
     </div>
