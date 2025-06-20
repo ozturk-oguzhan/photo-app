@@ -18,3 +18,17 @@
   object-fit: cover;
   height: 36px;
 }
+.comment-input {
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  padding: 4px 4px;
+  display: flex;
+  border-radius: 16px;
+  justify-content: center;
+}
+.comment-input input {
+  width: 90%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}

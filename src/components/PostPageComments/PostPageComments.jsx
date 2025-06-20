@@ -47,6 +47,9 @@ const PostPageComments = () => {
           </div>
         ))}
       </div>
+      <div className="comment-input">
+        <input type="text" placeholder="Add Comment" />
+      </div>
     </div>
   );
 };
