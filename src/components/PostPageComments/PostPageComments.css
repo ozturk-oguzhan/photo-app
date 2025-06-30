@@ -3,6 +3,12 @@
   gap: 20px;
   flex: 1;
   flex-direction: column;
+  justify-content: space-between;
+}
+.comment-main {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
 }
 .comments {
   display: flex;
@@ -17,4 +23,18 @@
   width: 36px;
   object-fit: cover;
   height: 36px;
+}
+.comment-input {
+  width: 100%;
+  background-color: rgb(231, 231, 231);
+  padding: 4px 4px;
+  display: flex;
+  border-radius: 16px;
+  justify-content: center;
+}
+.comment-input input {
+  width: 90%;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }

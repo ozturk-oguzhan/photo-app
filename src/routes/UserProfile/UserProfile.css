@@ -1,0 +1,66 @@
+.user-profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.user-img {
+  width: 75px;
+}
+.profile-func {
+  display: flex;
+  gap: 10px;
+}
+.profile-func img {
+  cursor: pointer;
+  width: 25px;
+  padding: 3px;
+  border-radius: 100%;
+  background-color: rgb(221, 221, 221);
+}
+.profile-func img:hover {
+  background-color: rgb(180, 180, 180);
+}
+.message {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  border-radius: 16px;
+  background-color: rgb(221, 221, 221);
+}
+.message:hover {
+  background-color: rgb(180, 180, 180);
+}
+.follow {
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  border-radius: 16px;
+  background-color: rgb(250, 0, 0);
+  color: white;
+}
+.follow:hover {
+  background-color: rgb(221, 0, 0);
+}
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.profile-options {
+  display: flex;
+  gap: 10px;
+}
+.profile-options span {
+  cursor: pointer;
+}
+.active {
+  border-bottom: 2px solid black;
+}

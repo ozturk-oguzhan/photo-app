@@ -10,7 +10,7 @@
 .post-container {
   display: flex;
   width: 85%;
-  max-height: 750px;
+  max-height: 700px;
   border-radius: 32px;
   overflow: hidden;
   border: 1px solid rgb(233, 233, 233);
@@ -31,7 +31,6 @@
   padding: 16px;
   gap: 16px;
   overflow: auto;
-  height: 650px;
 }
 .post-detail a {
   text-decoration: none;
@@ -56,6 +55,6 @@
 @media (max-width: 751px) {
   .post-container {
     flex-direction: column;
-    width: 50%;
+    width: 70%;
   }
 }

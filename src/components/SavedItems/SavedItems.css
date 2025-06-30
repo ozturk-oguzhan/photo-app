@@ -1,0 +1,14 @@
+.saved {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
+}
+.saved img {
+  width: 100%;
+}
+.collection {
+  cursor: pointer;
+}
+.collection-info span {
+  color: rgb(143, 143, 143);
+}
