@@ -3,6 +3,12 @@
   gap: 20px;
   flex: 1;
   flex-direction: column;
+  justify-content: space-between;
+}
+.comment-main {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
 }
 .comments {
   display: flex;

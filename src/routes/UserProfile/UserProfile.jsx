@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./UserProfile.css";
 import Gallery from "../../components/Gallery/Gallery";
+import SavedItems from "../../components/SavedItems/SavedItems";
 const UserProfile = () => {
   const [active, setActive] = useState("created");
   function setClass(activeClass) {
@@ -35,7 +36,7 @@ const UserProfile = () => {
             Saved
           </span>
         </div>
-        {active === "created" ? <Gallery /> : "asdasd"}
+        {active === "created" ? <Gallery /> : <SavedItems />}
       </div>
     </div>
   );
