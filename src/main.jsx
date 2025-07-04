@@ -9,9 +9,11 @@ import SearchPage from "./routes/SearchPage/SearchPage";
 import UserProfile from "./routes/UserProfile/UserProfile";
 import { BrowserRouter, Route, Routes } from "react-router";
 import MainLayout from "./layouts/MainLayout/MainLayout";
+import { Provider } from "react-redux";
+import { store } from "./utils/store";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
@@ -24,5 +26,5 @@ createRoot(document.getElementById("root")).render(
         <Route path="/auth" element={<AuthPage />} />
       </Routes>
     </BrowserRouter>
-  </StrictMode>
+  </Provider>
 );

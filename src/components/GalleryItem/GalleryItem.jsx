@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./GalleryItem.css";
 import { Link } from "react-router";
+
 const GalleryItem = ({ item }) => {
   return (
     <div
@@ -8,7 +9,7 @@ const GalleryItem = ({ item }) => {
       style={{ gridRowEnd: `span ${Math.ceil(item.height / 100)}` }}
     >
       <img src={item.media} alt="" />
-      <Link to={`/pin/${item.id}`} className="overlay"></Link>
+      <Link to={`/pin/${item._id}`} className="overlay"></Link>
       <button className="save-button">Save</button>
       <div className="gallery-functions">
         <button>
