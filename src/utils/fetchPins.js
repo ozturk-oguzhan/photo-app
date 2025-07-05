@@ -29,6 +29,13 @@ export const api = createApi({
         params: { userId },
       }),
     }),
+    getComments: builder.query({
+      query: ({ postId }) => ({
+        url: "comments",
+        method: "GET",
+        params: { postId },
+      }),
+    }),
   }),
 });
 
@@ -37,4 +44,5 @@ export const {
   useLazyGetPinQuery,
   useLazyGetUserQuery,
   useLazyGetBoardsQuery,
+  useLazyGetCommentsQuery,
 } = api;

@@ -1,55 +1,17 @@
 import React, { useState } from "react";
 import "./PostPageComments.css";
-const PostPageComments = () => {
-  const [comments, setComments] = useState([
-    {
-      img: "/general/noAvatar.png",
-      name: "John",
-      comment:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius placeat",
-    },
-    {
-      img: "/general/noAvatar.png",
-      name: "John",
-      comment:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius placeat",
-    },
-    {
-      img: "/general/noAvatar.png",
-      name: "John",
-      comment:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius placeat",
-    },
-    {
-      img: "/general/noAvatar.png",
-      name: "John",
-      comment:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius placeat",
-    },
-    {
-      img: "/general/noAvatar.png",
-      name: "John",
-      comment:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius placeat",
-    },
-    {
-      img: "/general/noAvatar.png",
-      name: "John",
-      comment:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius placeat",
-    },
-  ]);
+const PostPageComments = ({ comments }) => {
   return (
     <div className="post-comments">
       <div className="comment-main">
         <span>Comments</span>
         <div className="comments">
           {comments.map((comment) => (
-            <div className="comment">
-              <img src={comment.img} alt="" />
+            <div className="comment" key={comment._id}>
+              <img src={comment.user.img} alt="" />
               <div className="comment-info">
-                <span>{comment.name}</span>
-                <p>{comment.comment}</p>
+                <span>{comment.user.displayName}</span>
+                <p>{comment.description}</p>
               </div>
             </div>
           ))}

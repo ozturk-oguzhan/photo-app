@@ -3,14 +3,21 @@ import "./PostPage.css";
 import { Link, useParams } from "react-router";
 import PostPageFunc from "../../components/PostPageFunc/PostPageFunc";
 import PostPageComments from "../../components/PostPageComments/PostPageComments";
-import { useLazyGetPinQuery } from "../../utils/fetchPins";
+import {
+  useLazyGetPinQuery,
+  useLazyGetCommentsQuery,
+} from "../../utils/fetchPins";
 const PostPage = () => {
   const { id } = useParams();
   const [fetchPin] = useLazyGetPinQuery();
+  const [fetchComment] = useLazyGetCommentsQuery();
   const [post, setPost] = useState();
+  const [comments, setComments] = useState([]);
   async function fetchPost() {
     const res = await fetchPin({ id }).unwrap();
-    console.log(res);
+    const commentData = await fetchComment({ postId: id }).unwrap();
+    setComments(commentData);
+    console.log(commentData);
     setPost(res);
   }
   useEffect(() => {
@@ -31,7 +38,7 @@ const PostPage = () => {
             <img src={post?.user?.img} alt="" />
             <span>{post?.user?.displayName}</span>
           </Link>
-          <PostPageComments />
+          <PostPageComments comments={comments} />
         </div>
       </div>
     </div>

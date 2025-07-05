@@ -7,7 +7,7 @@ const Gallery = ({ search, userId }) => {
   const [items, setItems] = useState([]);
   const [skip, setSkip] = useState(0);
   const [hasMore, setHasMore] = useState(true);
-  const [fetchPins, { isFetching }] = useLazyGetPinsQuery();
+  const [fetchPins, { isFetching, isLoading }] = useLazyGetPinsQuery();
 
   async function fetchData() {
     if (isFetching) return;
@@ -34,6 +34,7 @@ const Gallery = ({ search, userId }) => {
     fetchData();
   }, [search]);
 
+  if (isLoading) return;
   return (
     <InfiniteScroll
       dataLength={items.length}
