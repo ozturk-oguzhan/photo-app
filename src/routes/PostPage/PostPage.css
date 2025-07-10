@@ -10,7 +10,7 @@
 .post-container {
   display: flex;
   width: 85%;
-  max-height: 700px;
+  max-height: 70vh;
   border-radius: 32px;
   overflow: hidden;
   border: 1px solid rgb(233, 233, 233);
@@ -31,6 +31,7 @@
   padding: 16px;
   gap: 16px;
   overflow: auto;
+  position: relative;
 }
 .post-detail a {
   text-decoration: none;
@@ -49,6 +50,7 @@
 @media (max-width: 1127px) {
   .post-container {
     width: 100%;
+
     margin: 20px;
   }
 }
@@ -56,5 +58,13 @@
   .post-container {
     flex-direction: column;
     width: 70%;
+    max-height: none;
+    height: 85vh;
+  }
+  .post-image {
+    height: 40%;
+  }
+  .post-detail {
+    height: 60%;
   }
 }

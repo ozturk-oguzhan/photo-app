@@ -7,7 +7,7 @@
 .user-button img {
   width: 36px;
   height: 36px;
-  border: 100%;
+  border-radius: 100%;
   object-fit: cover;
 }
 .user-button .arrow {
@@ -43,6 +43,8 @@
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
+  text-decoration: none;
+  color: black;
 }
 .user-option:hover {
   background-color: #f1f1f1;

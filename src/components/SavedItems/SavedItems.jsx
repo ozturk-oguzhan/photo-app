@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./SavedItems.css";
-const SavedItems = ({ boardsData }) => {
+import { useLazyGetAllSavedPinQuery } from "../../utils/fetchPins";
+import GalleryItem from "../GalleryItem/GalleryItem";
+const SavedItems = () => {
+  const [getAllSaved] = useLazyGetAllSavedPinQuery();
+  const [savedPins, setSavedPins] = useState([]);
+  async function getAllSavedPin(params) {
+    const res = await getAllSaved().unwrap();
+    setSavedPins(res);
+  }
+  useEffect(() => {
+    getAllSavedPin();
+  }, [savedPins]);
   return (
-    <div className="saved">
-      {boardsData &&
-        boardsData.map((board) => (
-          <div className="collection" key={board._id}>
-            <img src="/pins/pin1.jpeg" alt="" />
-            <div className="collection-info">
-              <h4>{board.title}</h4>
-              <span>12 pins - 1w</span>
-            </div>
-          </div>
+    <div className="gallery">
+      {savedPins &&
+        savedPins.map((savedPin) => (
+          <GalleryItem key={savedPin.post._id} item={savedPin.post} />
         ))}
     </div>
   );

@@ -11,7 +11,7 @@ const Gallery = ({ search, userId }) => {
 
   async function fetchData() {
     if (isFetching) return;
-    console.log("userId", userId);
+
     const data = await fetchPins({ skip, search, userId }).unwrap();
 
     if (!data || data.length < 21) {
@@ -21,7 +21,6 @@ const Gallery = ({ search, userId }) => {
     setSkip((prev) => prev + 1);
   }
   useEffect(() => {
-    console.log(skip);
     setItems([]);
     setSkip(0);
     setHasMore(true);

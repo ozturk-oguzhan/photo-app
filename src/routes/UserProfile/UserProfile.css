@@ -12,6 +12,7 @@
 }
 .user-img {
   width: 75px;
+  border-radius: 8px;
 }
 .profile-func {
   display: flex;

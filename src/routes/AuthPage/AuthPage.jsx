@@ -1,14 +1,54 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import { useRegisterMutation, useLoginMutation } from "../../utils/fetchPins";
 import "./AuthPage.css";
+import { useNavigate } from "react-router";
+import { loginRtk } from "../../utils/userSlice";
+import { useDispatch } from "react-redux";
 const AuthPage = () => {
+  const navigate = useNavigate();
   const [isRegister, setIsRegister] = useState(false);
+  const [register, { isLoading: isLoadingRegister }] = useRegisterMutation();
+  const [login, { isLoading: isLoadingLogin }] = useLoginMutation();
+  const loginFrom = useRef();
+  const registerFrom = useRef();
+  const dispatch = useDispatch();
+
+  async function submitRegister(e) {
+    e.preventDefault();
+    try {
+      const formData = new FormData(registerFrom.current);
+      const username = formData.get("username");
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const password = formData.get("password");
+
+      const res = await register({ username, name, email, password }).unwrap();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function submitLogin(e) {
+    e.preventDefault();
+    try {
+      const formData = new FormData(loginFrom.current);
+      const password = formData.get("password");
+
+      const email = formData.get("email");
+      const res = await login({ email, password }).unwrap();
+
+      dispatch(loginRtk(res));
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <div className="auth-page">
       <div className="auth-form">
         <img src="/general/logo.png" alt="" />
         <h3>{isRegister ? "Register account" : "Login to your account"}</h3>
         {isRegister ? (
-          <form key="register">
+          <form key="register" ref={registerFrom} onSubmit={submitRegister}>
             <div className="auth-form-item">
               <label htmlFor="username">Username</label>
               <input
@@ -41,7 +81,7 @@ const AuthPage = () => {
             </span>
           </form>
         ) : (
-          <form key="login">
+          <form key="login" ref={loginFrom} onSubmit={submitLogin}>
             <div className="auth-form-item">
               <label htmlFor="email">Email</label>
               <input type="email" name="email" id="email" placeholder="Email" />

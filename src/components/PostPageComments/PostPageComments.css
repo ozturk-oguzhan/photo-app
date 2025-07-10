@@ -1,19 +1,22 @@
 .post-comments {
   display: flex;
-  gap: 20px;
+
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
+  overflow: auto;
 }
 .comment-main {
   display: flex;
-  gap: 20px;
+
   flex-direction: column;
 }
 .comments {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 .comment {
   display: flex;
@@ -27,13 +30,17 @@
 .comment-input {
   width: 100%;
   background-color: rgb(231, 231, 231);
-  padding: 4px 4px;
+  padding: 5px 5px;
+
   display: flex;
   border-radius: 16px;
   justify-content: center;
+  position: sticky;
+  bottom: 0px;
 }
 .comment-input input {
   width: 90%;
+  padding: 5px 5px;
   border: none;
   outline: none;
   background-color: transparent;

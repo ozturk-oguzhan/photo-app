@@ -2,6 +2,7 @@ import React from "react";
 import "./Topbar.css";
 import UserButton from "../UserButton/UserButton";
 import { useNavigate } from "react-router";
+
 const Topbar = () => {
   const navigate = useNavigate();
   function handleSubmit(e) {
@@ -14,6 +15,7 @@ const Topbar = () => {
         <img src="/general/search.svg" alt="" />
         <input type="text" placeholder="Search" />
       </div>
+
       <UserButton />
     </form>
   );
